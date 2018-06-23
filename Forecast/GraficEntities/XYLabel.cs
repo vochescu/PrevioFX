@@ -8,16 +8,15 @@ using System.Threading.Tasks;
 
 namespace Forecast
 {
-    [TypeConverter(typeof(XYLabelConverter))]
     public class XYLabel
     {
         private string xLabel = "X Axis";
         private string yLabel = "Y Axis";
         private string y2Label = "Y2 Axis";
-        private Font labelFont = new Font("Arial", 10, FontStyle.Regular);
-        private Color labelFontColor = Color.Black;
+        private Font labelFont = new Font("Palatino Linotype", 10, FontStyle.Regular);
+        private Color labelFontColor = Color.DarkSlateGray;
         private Font tickFont;
-        private Color tickFontColor = Color.Black;
+        private Color tickFontColor = Color.DarkSlateGray;
         private Grafic chart2d;
         public XYLabel(Grafic ct2d)
         {
@@ -34,7 +33,6 @@ namespace Forecast
                 chart2d.Invalidate();
             }
         }
-        [Description("Creates a label for the Y axis."), Category("Appearance")]
         public string YLabel
         {
             get { return yLabel; }
@@ -44,7 +42,6 @@ namespace Forecast
                 chart2d.Invalidate();
             }
         } 
-        [Description("Creates a label for the Y2 axis."), Category("Appearance")]
         public string Y2Label
         {
             get { return y2Label; }
@@ -54,7 +51,6 @@ namespace Forecast
                 chart2d.Invalidate();
             }
         }
-        [Description("The font used to display the axis labels."), Category("Appearance")]
         public Font LabelFont
         {
             get { return labelFont; }
@@ -64,7 +60,6 @@ namespace Forecast
                 chart2d.Invalidate();
             }
         }
-        [Description("Sets the color of the axis labels."),Category("Appearance")]
         public Color LabelFontColor
         {
             get { return labelFontColor; }
@@ -74,7 +69,6 @@ namespace Forecast
                 chart2d.Invalidate();
             }
         }
-        [Description("The font used to display the tick labels."), Category("Appearance")]
         public Font TickFont
         {
             get { return tickFont; }
@@ -84,7 +78,6 @@ namespace Forecast
                 chart2d.Invalidate();
             }
         }
-        [Description("Sets the color of the tick labels."), Category("Appearance")]
         public Color TickFontColor
         {
             get { return tickFontColor; }

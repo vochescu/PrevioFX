@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SelecteazaPerecheValutaraForm));
             this.mainPanel = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
@@ -42,10 +43,14 @@
             this.selecteazaPerecheValutaraBtn = new System.Windows.Forms.Button();
             this.perecheValutaraImportCb = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
+            this.simbolErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.denumireErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.mainPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.adaugaPerecheValGb.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.simbolErrorProvider)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.denumireErrorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // mainPanel
@@ -95,7 +100,7 @@
             this.anuleazaBtn.ForeColor = System.Drawing.Color.White;
             this.anuleazaBtn.Image = ((System.Drawing.Image)(resources.GetObject("anuleazaBtn.Image")));
             this.anuleazaBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.anuleazaBtn.Location = new System.Drawing.Point(293, 216);
+            this.anuleazaBtn.Location = new System.Drawing.Point(332, 216);
             this.anuleazaBtn.Name = "anuleazaBtn";
             this.anuleazaBtn.Size = new System.Drawing.Size(108, 25);
             this.anuleazaBtn.TabIndex = 18;
@@ -126,12 +131,13 @@
             this.adaugaPerecheValBtn.ForeColor = System.Drawing.Color.White;
             this.adaugaPerecheValBtn.Image = ((System.Drawing.Image)(resources.GetObject("adaugaPerecheValBtn.Image")));
             this.adaugaPerecheValBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.adaugaPerecheValBtn.Location = new System.Drawing.Point(272, 55);
+            this.adaugaPerecheValBtn.Location = new System.Drawing.Point(311, 55);
             this.adaugaPerecheValBtn.Name = "adaugaPerecheValBtn";
             this.adaugaPerecheValBtn.Size = new System.Drawing.Size(108, 25);
             this.adaugaPerecheValBtn.TabIndex = 14;
             this.adaugaPerecheValBtn.Text = "Adaugă";
             this.adaugaPerecheValBtn.UseVisualStyleBackColor = false;
+            this.adaugaPerecheValBtn.Click += new System.EventHandler(this.adaugaPerecheValBtn_Click);
             // 
             // denumireLb
             // 
@@ -176,7 +182,7 @@
             this.selecteazaPerecheValutaraBtn.ForeColor = System.Drawing.Color.White;
             this.selecteazaPerecheValutaraBtn.Image = ((System.Drawing.Image)(resources.GetObject("selecteazaPerecheValutaraBtn.Image")));
             this.selecteazaPerecheValutaraBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.selecteazaPerecheValutaraBtn.Location = new System.Drawing.Point(293, 46);
+            this.selecteazaPerecheValutaraBtn.Location = new System.Drawing.Point(332, 46);
             this.selecteazaPerecheValutaraBtn.Name = "selecteazaPerecheValutaraBtn";
             this.selecteazaPerecheValutaraBtn.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.selecteazaPerecheValutaraBtn.Size = new System.Drawing.Size(108, 25);
@@ -184,6 +190,7 @@
             this.selecteazaPerecheValutaraBtn.Text = "Selectează";
             this.selecteazaPerecheValutaraBtn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.selecteazaPerecheValutaraBtn.UseVisualStyleBackColor = false;
+            this.selecteazaPerecheValutaraBtn.Click += new System.EventHandler(this.selecteazaPerecheValutaraBtn_Click);
             // 
             // perecheValutaraImportCb
             // 
@@ -192,6 +199,7 @@
             this.perecheValutaraImportCb.Name = "perecheValutaraImportCb";
             this.perecheValutaraImportCb.Size = new System.Drawing.Size(150, 24);
             this.perecheValutaraImportCb.TabIndex = 15;
+            this.perecheValutaraImportCb.SelectedValueChanged += new System.EventHandler(this.perecheValutaraImportCb_SelectedValueChanged);
             // 
             // label7
             // 
@@ -203,6 +211,14 @@
             this.label7.Size = new System.Drawing.Size(92, 16);
             this.label7.TabIndex = 14;
             this.label7.Text = "Pereche valutară";
+            // 
+            // simbolErrorProvider
+            // 
+            this.simbolErrorProvider.ContainerControl = this;
+            // 
+            // denumireErrorProvider
+            // 
+            this.denumireErrorProvider.ContainerControl = this;
             // 
             // SelecteazaPerecheValutaraForm
             // 
@@ -222,6 +238,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.adaugaPerecheValGb.ResumeLayout(false);
             this.adaugaPerecheValGb.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.simbolErrorProvider)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.denumireErrorProvider)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -241,5 +259,7 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.ErrorProvider simbolErrorProvider;
+        private System.Windows.Forms.ErrorProvider denumireErrorProvider;
     }
 }

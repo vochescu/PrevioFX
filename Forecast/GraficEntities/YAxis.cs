@@ -7,7 +7,6 @@ using System.Threading.Tasks;
 
 namespace Forecast
 {
-    [TypeConverter(typeof(YAxisConverter))]
     public class YAxis
     {
         private float yLimMin = 0f;
@@ -19,7 +18,6 @@ namespace Forecast
             chart2d = ct2d;
         }
 
-        [Description("Sets the maximum limit for the Y axis."), Category("Appearance")]
         public float YLimMax
         {
             get { return yLimMax; }
@@ -29,8 +27,7 @@ namespace Forecast
                 chart2d.Invalidate();
             }
         }
-        [Description("Sets the minimum limit for the Y axis."),
-         Category("Appearance")]
+       
         public float YLimMin
         {
             get { return yLimMin; }
@@ -40,8 +37,7 @@ namespace Forecast
                 chart2d.Invalidate();
             }
         }
-        [Description("Sets the ticks for the Y axis."),
-         Category("Appearance")]
+      
         public float YTick
         {
             get { return yTick; }

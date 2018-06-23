@@ -17,6 +17,9 @@ namespace Forecast
         public EcranPrincipal()
         {
             InitializeComponent();
+            paginaSumar.AllowDrop = true;
+            paginaSumar.GetPanel().AllowDrop = true;
+
         }
 
         private void closeBtn_Click(object sender, EventArgs e)
@@ -107,5 +110,51 @@ namespace Forecast
             }
             paginaPrevizionare.BringToFront();
         }
+
+        private void sumarBtn_Click(object sender, EventArgs e)
+        {
+            if (meniuLateralPanel.Width == 200)
+            {
+                paginaSumar.Location = new Point(200, 33);
+            }
+            else
+            {
+                paginaSumar.Location = new Point(130, 33);
+            }
+            paginaSumar.BringToFront();
+        }
+
+        private void EcranPrincipal_DragDrop(object sender, DragEventArgs e)
+        {
+            paginaSumar.GetPanel().DragDrop += EcranPrincipal_DragDrop;
+
+            int x = this.PointToClient(new Point(e.X, e.Y)).X;
+
+            int y = this.PointToClient(new Point(e.X, e.Y)).Y;
+
+            PictureBox pictureBox = paginaSumar.GetPictureBox();
+
+            if (x >= pictureBox.Location.X && x <= pictureBox.Location.X + pictureBox.Width && y >= pictureBox.Location.Y && y <= pictureBox.Location.Y + pictureBox.Height)
+
+            {
+                string[] files = (string[])e.Data.GetData(DataFormats.FileDrop);
+                pictureBox.Image = Image.FromFile(files[0]);
+            }
+
+        }
+
+        private void EcranPrincipal_DragEnter(object sender, DragEventArgs e)
+        {
+            e.Effect = DragDropEffects.Copy;
+            paginaSumar.GetPanel().DragEnter += EcranPrincipal_DragEnter;
+        }
+
+        private void ajutorBtn_Click(object sender, EventArgs e)
+        {
+            AboutForm despreForm = new AboutForm();
+            despreForm.Show();
+        }
+
+       
     }
 }

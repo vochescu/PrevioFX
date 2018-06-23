@@ -30,7 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EcranPrincipal));
             this.meniuLateralPanel = new System.Windows.Forms.Panel();
-            this.raportBtn = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.sumarBtn = new Bunifu.Framework.UI.BunifuFlatButton();
             this.descriereLabel = new System.Windows.Forms.Label();
             this.ajutorBtn = new Bunifu.Framework.UI.BunifuFlatButton();
             this.previzionareBtn = new Bunifu.Framework.UI.BunifuFlatButton();
@@ -45,6 +45,7 @@
             this.paginaDate = new Forecast.PaginaDate();
             this.paginaPrevizionare = new Forecast.PaginaPrevizionare();
             this.paginaGrafic = new Forecast.PaginaGrafic();
+            this.paginaSumar = new Forecast.UserControlForms.PaginaSumar();
             this.meniuLateralPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logoPictureBox)).BeginInit();
             this.meniuBarPanel.SuspendLayout();
@@ -56,7 +57,7 @@
             // meniuLateralPanel
             // 
             this.meniuLateralPanel.BackColor = System.Drawing.Color.White;
-            this.meniuLateralPanel.Controls.Add(this.raportBtn);
+            this.meniuLateralPanel.Controls.Add(this.sumarBtn);
             this.meniuLateralPanel.Controls.Add(this.descriereLabel);
             this.meniuLateralPanel.Controls.Add(this.ajutorBtn);
             this.meniuLateralPanel.Controls.Add(this.previzionareBtn);
@@ -68,39 +69,40 @@
             this.meniuLateralPanel.Size = new System.Drawing.Size(200, 523);
             this.meniuLateralPanel.TabIndex = 0;
             // 
-            // raportBtn
+            // sumarBtn
             // 
-            this.raportBtn.Activecolor = System.Drawing.Color.White;
-            this.raportBtn.BackColor = System.Drawing.Color.White;
-            this.raportBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.raportBtn.BorderRadius = 0;
-            this.raportBtn.ButtonText = "       Raport";
-            this.raportBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.raportBtn.DisabledColor = System.Drawing.Color.Gray;
-            this.raportBtn.Iconcolor = System.Drawing.Color.Transparent;
-            this.raportBtn.Iconimage = ((System.Drawing.Image)(resources.GetObject("raportBtn.Iconimage")));
-            this.raportBtn.Iconimage_right = null;
-            this.raportBtn.Iconimage_right_Selected = null;
-            this.raportBtn.Iconimage_Selected = null;
-            this.raportBtn.IconMarginLeft = 0;
-            this.raportBtn.IconMarginRight = 0;
-            this.raportBtn.IconRightVisible = true;
-            this.raportBtn.IconRightZoom = 0D;
-            this.raportBtn.IconVisible = true;
-            this.raportBtn.IconZoom = 60D;
-            this.raportBtn.IsTab = false;
-            this.raportBtn.Location = new System.Drawing.Point(0, 340);
-            this.raportBtn.Name = "raportBtn";
-            this.raportBtn.Normalcolor = System.Drawing.Color.White;
-            this.raportBtn.OnHovercolor = System.Drawing.Color.Gainsboro;
-            this.raportBtn.OnHoverTextColor = System.Drawing.Color.Black;
-            this.raportBtn.selected = false;
-            this.raportBtn.Size = new System.Drawing.Size(200, 50);
-            this.raportBtn.TabIndex = 8;
-            this.raportBtn.Text = "       Raport";
-            this.raportBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.raportBtn.Textcolor = System.Drawing.Color.Black;
-            this.raportBtn.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sumarBtn.Activecolor = System.Drawing.Color.White;
+            this.sumarBtn.BackColor = System.Drawing.Color.White;
+            this.sumarBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.sumarBtn.BorderRadius = 0;
+            this.sumarBtn.ButtonText = "       Sumar";
+            this.sumarBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.sumarBtn.DisabledColor = System.Drawing.Color.Gray;
+            this.sumarBtn.Iconcolor = System.Drawing.Color.Transparent;
+            this.sumarBtn.Iconimage = ((System.Drawing.Image)(resources.GetObject("sumarBtn.Iconimage")));
+            this.sumarBtn.Iconimage_right = null;
+            this.sumarBtn.Iconimage_right_Selected = null;
+            this.sumarBtn.Iconimage_Selected = null;
+            this.sumarBtn.IconMarginLeft = 0;
+            this.sumarBtn.IconMarginRight = 0;
+            this.sumarBtn.IconRightVisible = true;
+            this.sumarBtn.IconRightZoom = 0D;
+            this.sumarBtn.IconVisible = true;
+            this.sumarBtn.IconZoom = 60D;
+            this.sumarBtn.IsTab = false;
+            this.sumarBtn.Location = new System.Drawing.Point(0, 340);
+            this.sumarBtn.Name = "sumarBtn";
+            this.sumarBtn.Normalcolor = System.Drawing.Color.White;
+            this.sumarBtn.OnHovercolor = System.Drawing.Color.Gainsboro;
+            this.sumarBtn.OnHoverTextColor = System.Drawing.Color.Black;
+            this.sumarBtn.selected = false;
+            this.sumarBtn.Size = new System.Drawing.Size(200, 50);
+            this.sumarBtn.TabIndex = 8;
+            this.sumarBtn.Text = "       Sumar";
+            this.sumarBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.sumarBtn.Textcolor = System.Drawing.Color.Black;
+            this.sumarBtn.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sumarBtn.Click += new System.EventHandler(this.sumarBtn_Click);
             // 
             // descriereLabel
             // 
@@ -120,7 +122,7 @@
             this.ajutorBtn.BackColor = System.Drawing.Color.White;
             this.ajutorBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ajutorBtn.BorderRadius = 0;
-            this.ajutorBtn.ButtonText = "       Ajutor";
+            this.ajutorBtn.ButtonText = "       Despre";
             this.ajutorBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ajutorBtn.DisabledColor = System.Drawing.Color.Gray;
             this.ajutorBtn.Iconcolor = System.Drawing.Color.Transparent;
@@ -143,10 +145,11 @@
             this.ajutorBtn.selected = false;
             this.ajutorBtn.Size = new System.Drawing.Size(200, 50);
             this.ajutorBtn.TabIndex = 6;
-            this.ajutorBtn.Text = "       Ajutor";
+            this.ajutorBtn.Text = "       Despre";
             this.ajutorBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.ajutorBtn.Textcolor = System.Drawing.Color.Black;
             this.ajutorBtn.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ajutorBtn.Click += new System.EventHandler(this.ajutorBtn_Click);
             // 
             // previzionareBtn
             // 
@@ -337,6 +340,7 @@
             // 
             // paginaDate
             // 
+            this.paginaDate.AllowDrop = true;
             this.paginaDate.BackColor = System.Drawing.Color.Ivory;
             this.paginaDate.Location = new System.Drawing.Point(200, 33);
             this.paginaDate.Name = "paginaDate";
@@ -354,27 +358,41 @@
             // paginaGrafic
             // 
             this.paginaGrafic.BackColor = System.Drawing.Color.Ivory;
+            this.paginaGrafic.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.paginaGrafic.Location = new System.Drawing.Point(200, 33);
             this.paginaGrafic.Name = "paginaGrafic";
             this.paginaGrafic.Size = new System.Drawing.Size(700, 520);
             this.paginaGrafic.TabIndex = 3;
             // 
+            // paginaSumar
+            // 
+            this.paginaSumar.AllowDrop = true;
+            this.paginaSumar.Location = new System.Drawing.Point(200, 33);
+            this.paginaSumar.Name = "paginaSumar";
+            this.paginaSumar.Size = new System.Drawing.Size(700, 520);
+            this.paginaSumar.TabIndex = 5;
+            // 
             // EcranPrincipal
             // 
+            this.AllowDrop = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Ivory;
             this.ClientSize = new System.Drawing.Size(900, 550);
-            this.Controls.Add(this.paginaDate);
             this.Controls.Add(this.meniuBarPanel);
             this.Controls.Add(this.meniuLateralPanel);
+            this.Controls.Add(this.paginaDate);
+            this.Controls.Add(this.paginaSumar);
             this.Controls.Add(this.paginaPrevizionare);
             this.Controls.Add(this.paginaGrafic);
+            this.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "EcranPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Previo";
+            this.DragDrop += new System.Windows.Forms.DragEventHandler(this.EcranPrincipal_DragDrop);
+            this.DragEnter += new System.Windows.Forms.DragEventHandler(this.EcranPrincipal_DragEnter);
             this.meniuLateralPanel.ResumeLayout(false);
             this.meniuLateralPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logoPictureBox)).EndInit();
@@ -401,9 +419,10 @@
         private Bunifu.Framework.UI.BunifuImageButton closeBtn;
         private Bunifu.Framework.UI.BunifuImageButton minimizeBtn;
         private System.Windows.Forms.Label label2;
-        private Bunifu.Framework.UI.BunifuFlatButton raportBtn;
+        private Bunifu.Framework.UI.BunifuFlatButton sumarBtn;
         private PaginaDate paginaDate;
         private PaginaGrafic paginaGrafic;
         private PaginaPrevizionare paginaPrevizionare;
+        private UserControlForms.PaginaSumar paginaSumar;
     }
 }

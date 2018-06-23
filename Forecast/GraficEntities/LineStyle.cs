@@ -11,7 +11,7 @@ namespace Forecast
     public class LineStyle
     {
         private DashStyle linePattern = DashStyle.Solid;
-        private Color lineColor = Color.Black;
+        private Color lineColor = Color.BlueViolet;
         private float LineThickness = 1.0f;
         private bool isVisible = true;
         public LineStyle()

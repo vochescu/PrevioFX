@@ -9,11 +9,10 @@ using System.Threading.Tasks;
 
 namespace Forecast
 {
-    [TypeConverter(typeof(GridConverter))]
     public class Grid
     {
         private DashStyle gridPattern = DashStyle.Solid;
-        private Color gridColor = Color.LightGray;
+        private Color gridColor = Color.Ivory;
         private float gridLineThickness = 1.0f;
         private bool isXGrid = true;
         private bool isYGrid = true;
@@ -22,7 +21,7 @@ namespace Forecast
         {
             chart2d = ct2d;
         }
-        [Description("Indicates whether the X grid is shown."), Category("Appearance")]
+
         public bool IsXGrid
         {
             get { return isXGrid; }
@@ -32,8 +31,7 @@ namespace Forecast
                 chart2d.Invalidate();
             }
         }
-        [Description("Indicates whether the Y grid is shown."),
-         Category("Appearance")]
+
         public bool IsYGrid
         {
             get { return isYGrid; }
@@ -43,7 +41,7 @@ namespace Forecast
                 chart2d.Invalidate();
             }
         }
-        [Description("Sets the line pattern for the grid lines."), Category("Appearance")]
+
         virtual public DashStyle GridPattern
         {
             get { return gridPattern; }
@@ -53,7 +51,7 @@ namespace Forecast
                 chart2d.Invalidate();
             }
         }
-        [Description("Sets the thickness for the grid lines."), Category("Appearance")]
+
         public float GridThickness
         {
             get { return gridLineThickness; }
@@ -63,7 +61,7 @@ namespace Forecast
                 chart2d.Invalidate();
             }
         }
-        [Description("The color used to display the grid lines."), Category("Appearance")]
+
         virtual public Color GridColor
         {
             get { return gridColor; }

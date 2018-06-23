@@ -36,13 +36,11 @@
             this.lowTb = new Bunifu.Framework.UI.BunifuMetroTextbox();
             this.highTb = new Bunifu.Framework.UI.BunifuMetroTextbox();
             this.openTb = new Bunifu.Framework.UI.BunifuMetroTextbox();
-            this.dataDtp = new Bunifu.Framework.UI.BunifuDatepicker();
             this.closeLb = new System.Windows.Forms.Label();
             this.lowLb = new System.Windows.Forms.Label();
             this.highLb = new System.Windows.Forms.Label();
             this.openLb = new System.Windows.Forms.Label();
             this.dataLb = new System.Windows.Forms.Label();
-            this.dataErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.openErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.highErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.lowErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
@@ -51,8 +49,8 @@
             this.okBtn = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.perecheValutaraPb = new System.Windows.Forms.PictureBox();
+            this.dataDtp = new System.Windows.Forms.DateTimePicker();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataErrorProvider)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.openErrorProvider)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.highErrorProvider)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lowErrorProvider)).BeginInit();
@@ -75,11 +73,11 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.dataDtp);
             this.groupBox1.Controls.Add(this.closeTb);
             this.groupBox1.Controls.Add(this.lowTb);
             this.groupBox1.Controls.Add(this.highTb);
             this.groupBox1.Controls.Add(this.openTb);
-            this.groupBox1.Controls.Add(this.dataDtp);
             this.groupBox1.Controls.Add(this.closeLb);
             this.groupBox1.Controls.Add(this.lowLb);
             this.groupBox1.Controls.Add(this.highLb);
@@ -162,20 +160,6 @@
             this.openTb.TabIndex = 7;
             this.openTb.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
-            // dataDtp
-            // 
-            this.dataDtp.BackColor = System.Drawing.Color.SteelBlue;
-            this.dataDtp.BorderRadius = 5;
-            this.dataDtp.ForeColor = System.Drawing.Color.White;
-            this.dataDtp.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-            this.dataDtp.FormatCustom = null;
-            this.dataDtp.Location = new System.Drawing.Point(85, 30);
-            this.dataDtp.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.dataDtp.Name = "dataDtp";
-            this.dataDtp.Size = new System.Drawing.Size(199, 25);
-            this.dataDtp.TabIndex = 6;
-            this.dataDtp.Value = new System.DateTime(2018, 5, 20, 0, 0, 0, 0);
-            // 
             // closeLb
             // 
             this.closeLb.AutoSize = true;
@@ -225,10 +209,6 @@
             this.dataLb.Size = new System.Drawing.Size(30, 16);
             this.dataLb.TabIndex = 1;
             this.dataLb.Text = "Data";
-            // 
-            // dataErrorProvider
-            // 
-            this.dataErrorProvider.ContainerControl = this;
             // 
             // openErrorProvider
             // 
@@ -309,6 +289,13 @@
             this.perecheValutaraPb.TabIndex = 7;
             this.perecheValutaraPb.TabStop = false;
             // 
+            // dataDtp
+            // 
+            this.dataDtp.Location = new System.Drawing.Point(85, 32);
+            this.dataDtp.Name = "dataDtp";
+            this.dataDtp.Size = new System.Drawing.Size(200, 22);
+            this.dataDtp.TabIndex = 11;
+            // 
             // AdaugaValoriForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -327,7 +314,6 @@
             this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.AdaugaValoriForm_MouseUp);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataErrorProvider)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.openErrorProvider)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.highErrorProvider)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lowErrorProvider)).EndInit();
@@ -347,13 +333,11 @@
         private Bunifu.Framework.UI.BunifuMetroTextbox lowTb;
         private Bunifu.Framework.UI.BunifuMetroTextbox highTb;
         private Bunifu.Framework.UI.BunifuMetroTextbox openTb;
-        private Bunifu.Framework.UI.BunifuDatepicker dataDtp;
         private System.Windows.Forms.Label closeLb;
         private System.Windows.Forms.Label lowLb;
         private System.Windows.Forms.Label highLb;
         private System.Windows.Forms.Label openLb;
         private System.Windows.Forms.Label dataLb;
-        private System.Windows.Forms.ErrorProvider dataErrorProvider;
         private System.Windows.Forms.ErrorProvider openErrorProvider;
         private System.Windows.Forms.ErrorProvider highErrorProvider;
         private System.Windows.Forms.ErrorProvider lowErrorProvider;
@@ -362,5 +346,6 @@
         private System.Windows.Forms.Button okBtn;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox perecheValutaraPb;
+        private System.Windows.Forms.DateTimePicker dataDtp;
     }
 }

@@ -14,11 +14,11 @@ namespace Forecast
 {
     public partial class SelecteazaPerecheValutaraForm : Form
     {
-        SqlConnection connection;
         Bunifu.Framework.UI.Drag MoveForm = new Bunifu.Framework.UI.Drag();
         Database database = new Database();
 
-        public String SimbolSelectat{
+        public String SimbolSelectat
+        {
             get;
             set;
         }
@@ -56,11 +56,15 @@ namespace Forecast
 
         private void adaugaPerecheValBtn_Click(object sender, EventArgs e)
         {
-            if(denumireTb.Text.ToString().Trim() != "" || simbolTb.Text.ToString().Trim() != "")
+            simbolErrorProvider.Clear();
+            denumireErrorProvider.Clear();
+            if (validareCampuriInserarePerecheValutara())
             {
                 database.InsertPerecheValutaraIntoDatabase(denumireTb.Text.ToString().Trim(), simbolTb.Text.ToString().Trim());
                 MessageBox.Show("Perechea valutară " + simbolTb.Text.ToString() + " a fost adaugată cu succes! ");
                 bindComboBoxAndDatabase();
+                denumireTb.Clear();
+                simbolTb.Clear();
             }
         }
 
@@ -82,6 +86,23 @@ namespace Forecast
         private void mainPanel_MouseDown(object sender, MouseEventArgs e)
         {
             MoveForm.Grab(this);
+        }
+
+        private bool validareCampuriInserarePerecheValutara()
+        {
+            bool ok = true;
+            if (simbolTb.Text.ToString().Trim() == "")
+            {
+                ok = false;
+                simbolErrorProvider.SetError(simbolTb,Constante.EROARE_SIMBOL);
+            }
+
+            if (denumireTb.Text.ToString().Trim() == "")
+            {
+                ok = false;
+                denumireErrorProvider.SetError(denumireTb, Constante.EROARE_DENUMIRE);
+            }
+            return ok;
         }
     }
 }

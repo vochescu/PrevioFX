@@ -8,14 +8,13 @@ using System.Threading.Tasks;
 
 namespace Forecast
 {
-    [TypeConverter(typeof(ChartAreaConverter))]
     public class ChartArea
     {
         private Grafic chart2d;
         private Color chartBackColor;
         private Color chartBorderColor;
         private Color plotBackColor = Color.White;
-        private Color plotBorderColor = Color.Black;
+        private Color plotBorderColor = Color.DarkSlateGray;
 
         public ChartArea(Grafic ct2d)
         {
@@ -24,7 +23,6 @@ namespace Forecast
             chartBorderColor = chart2d.BackColor;
         }
 
-        // The background color of the chart area.
         public Color ChartBackColor
         {
             get { return chartBackColor; }
@@ -34,8 +32,6 @@ namespace Forecast
                 chart2d.Invalidate();
             }
         }
-
-        [Description("The border color of the chart area."), Category("Appearance")]
         public Color ChartBorderColor
         {
             get { return chartBorderColor; }
@@ -45,8 +41,6 @@ namespace Forecast
                 chart2d.Invalidate();
             }
         }
-
-        [Description("The background color of the plot area."), Category("Appearance")]
         public Color PlotBackColor
         {
             get { return plotBackColor; }
@@ -56,8 +50,6 @@ namespace Forecast
                 chart2d.Invalidate();
             }
         }
-
-        [Description("The border color of the plot area."), Category("Appearance")]
         public Color PlotBorderColor
         {
             get { return plotBorderColor; }

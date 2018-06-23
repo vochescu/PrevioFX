@@ -18,8 +18,8 @@ namespace Forecast
         {
             symbolType = SymbolTypeEnum.None;
             symbolSize = 8.0f;
-            borderColor = Color.Black;
-            fillColor = Color.Black;
+            borderColor = Color.DarkSlateGray;
+            fillColor = Color.DarkSlateGray;
             borderThickness = 1f;
         }
         public float BorderThickness
@@ -78,14 +78,10 @@ namespace Forecast
             switch (SymbolType)
             {
                 case SymbolTypeEnum.Square:
-                    g.DrawLine(aPen, x - halfSize, y - halfSize,
-                        x + halfSize, y - halfSize);
-                    g.DrawLine(aPen, x + halfSize, y - halfSize,
-                        x + halfSize, y + halfSize);
-                    g.DrawLine(aPen, x + halfSize, y + halfSize,
-                        x - halfSize, y + halfSize);
-                    g.DrawLine(aPen, x - halfSize, y + halfSize,
-                        x - halfSize, y - halfSize);
+                    g.DrawLine(aPen, x - halfSize, y - halfSize, x + halfSize, y - halfSize);
+                    g.DrawLine(aPen, x + halfSize, y - halfSize, x + halfSize, y + halfSize);
+                    g.DrawLine(aPen, x + halfSize, y + halfSize, x - halfSize, y + halfSize);
+                    g.DrawLine(aPen, x - halfSize, y + halfSize, x - halfSize, y - halfSize);
                     break;           
                 case SymbolTypeEnum.OpenDiamond:
                     g.DrawLine(aPen, x, y - halfSize, x + halfSize, y);
@@ -97,36 +93,26 @@ namespace Forecast
                     g.DrawEllipse(aPen, x - halfSize, y - halfSize, size, size);
                     break;
                 case SymbolTypeEnum.OpenTriangle:
-                    g.DrawLine(aPen, x, y - halfSize, x + halfSize,
-                        y + halfSize);
-                    g.DrawLine(aPen, x + halfSize, y + halfSize,
-                        x - halfSize, y + halfSize);
-                    g.DrawLine(aPen, x - halfSize, y + halfSize, x,
-                        y - halfSize);
+                    g.DrawLine(aPen, x, y - halfSize, x + halfSize, y + halfSize);
+                    g.DrawLine(aPen, x + halfSize, y + halfSize, x - halfSize, y + halfSize);
+                    g.DrawLine(aPen, x - halfSize, y + halfSize, x, y - halfSize);
                     break;
                 case SymbolTypeEnum.None:
                     break;
                 case SymbolTypeEnum.Cross:
-                    g.DrawLine(aPen, x - halfSize, y - halfSize,
-                        x + halfSize, y + halfSize);
-                    g.DrawLine(aPen, x + halfSize, y - halfSize,
-                        x - halfSize, y + halfSize);
+                    g.DrawLine(aPen, x - halfSize, y - halfSize, x + halfSize, y + halfSize);
+                    g.DrawLine(aPen, x + halfSize, y - halfSize, x - halfSize, y + halfSize);
                     break;
                 case SymbolTypeEnum.Star:
                     g.DrawLine(aPen, x, y - halfSize, x, y + halfSize);
                     g.DrawLine(aPen, x - halfSize, y, x + halfSize, y);
-                    g.DrawLine(aPen, x - halfSize, y - halfSize,
-                        x + halfSize, y + halfSize);
-                    g.DrawLine(aPen, x + halfSize, y - halfSize,
-                        x - halfSize, y + halfSize);
+                    g.DrawLine(aPen, x - halfSize, y - halfSize, x + halfSize, y + halfSize);
+                    g.DrawLine(aPen, x + halfSize, y - halfSize, x - halfSize, y + halfSize);
                     break;
                 case SymbolTypeEnum.OpenInvertedTriangle:
-                    g.DrawLine(aPen, x - halfSize, y - halfSize,
-                        x + halfSize, y - halfSize);
-                    g.DrawLine(aPen, x + halfSize, y - halfSize, x,
-                        y + halfSize);
-                    g.DrawLine(aPen, x, y + halfSize, x - halfSize,
-                        y - halfSize);
+                    g.DrawLine(aPen, x - halfSize, y - halfSize, x + halfSize, y - halfSize);
+                    g.DrawLine(aPen, x + halfSize, y - halfSize, x, y + halfSize);
+                    g.DrawLine(aPen, x, y + halfSize, x - halfSize, y - halfSize);
                     break;
                 case SymbolTypeEnum.Plus:
                     g.DrawLine(aPen, x, y - halfSize, x, y + halfSize);
@@ -138,14 +124,10 @@ namespace Forecast
                     break;
                 case SymbolTypeEnum.Box:
                     g.FillRectangle(aBrush, aRectangle);
-                    g.DrawLine(aPen, x - halfSize, y - halfSize,
-                        x + halfSize, y - halfSize);
-                    g.DrawLine(aPen, x + halfSize, y - halfSize,
-                        x + halfSize, y + halfSize);
-                    g.DrawLine(aPen, x + halfSize, y + halfSize,
-                        x - halfSize, y + halfSize);
-                    g.DrawLine(aPen, x - halfSize, y + halfSize,
-                        x - halfSize, y - halfSize);
+                    g.DrawLine(aPen, x - halfSize, y - halfSize, x + halfSize, y - halfSize);
+                    g.DrawLine(aPen, x + halfSize, y - halfSize, x + halfSize, y + halfSize);
+                    g.DrawLine(aPen, x + halfSize, y + halfSize, x - halfSize, y + halfSize);
+                    g.DrawLine(aPen, x - halfSize, y + halfSize, x - halfSize, y - halfSize);
                     break;
                 case SymbolTypeEnum.Diamond:
                     PointF[] pta = new PointF[4];

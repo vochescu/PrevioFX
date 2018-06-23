@@ -23,6 +23,7 @@ namespace Forecast
             esteEditare = false;
             InitializeComponent();
             perecheValutaraLb.Text = simbol;
+            dataDtp.MaxDate = DateTime.Today;
            
         }
         public AdaugaValoriForm(Valoare valoare, String simbol)
@@ -47,7 +48,6 @@ namespace Forecast
 
         private void okBtn_Click(object sender, EventArgs e)
         {
-            dataErrorProvider.Clear();
             openErrorProvider.Clear();
             highErrorProvider.Clear();
             lowErrorProvider.Clear();
@@ -75,11 +75,7 @@ namespace Forecast
         {
             bool campuriOk = true;
             float result = 0f;
-            if(!(dataDtp.Value.Date.Year <= DateTime.Today.Year && dataDtp.Value.Date.Month <= DateTime.Today.Month && dataDtp.Value.Day <= DateTime.Today.Day))
-            {
-                campuriOk = false;
-                dataErrorProvider.SetError(dataDtp, Constante.EROARE_DATA);
-            }
+           
             if (String.IsNullOrEmpty(openTb.Text.ToString().Trim()))
             {
                 campuriOk = false;

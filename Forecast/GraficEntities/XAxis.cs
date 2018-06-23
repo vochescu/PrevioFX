@@ -7,21 +7,29 @@ using System.Threading.Tasks;
 
 namespace Forecast
 {
-    [TypeConverter(typeof(XAxisConverter))]
     public class XAxis
     {
         private float xLimMin = 0f;
-        private float xLimMax = 10f;
-        private float xTick = 2f;
+        private float xLimMax = 1f;
+        private float xTick = 1f;
+        private List<DateTime> listaDate = new List<DateTime>();
         private Grafic chart2d;
 
         public XAxis(Grafic ct2d)
         {
             chart2d = ct2d;
+            listaDate.Add(DateTime.Today);
+            listaDate.Add(DateTime.Today);
         }
-
-        [Description("Sets the maximum limit for the X axis."),
-         Category("Appearance")]
+        public List<DateTime> ListaDate {
+            get { return listaDate; }
+            set
+            {
+                listaDate = value;
+                chart2d.Invalidate();
+            }
+        }
+        
         public float XLimMax
         {
             get { return xLimMax; }
@@ -32,8 +40,6 @@ namespace Forecast
             }
         }
 
-        [Description("Sets the minimum limit for the X axis."),
-         Category("Appearance")]
         public float XLimMin
         {
             get { return xLimMin; }
@@ -44,7 +50,6 @@ namespace Forecast
             }
         }
 
-        [Description("Sets the ticks for the X axis."), Category("Appearance")]
         public float XTick
         {
             get { return xTick; }
